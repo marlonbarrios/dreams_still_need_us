@@ -2,7 +2,7 @@ let videos = [];
 let currentVideoIndex = -1;
 
 function preload() {
-  for (let i = 1; i <= 9; i++) {
+  for (let i = 1; i <= 5; i++) {
     videos[i] = createVideo(i + '.mov');
     videos[i].hide();
   }
@@ -11,7 +11,7 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
-  for (let i = 1; i <= 9; i++) {
+  for (let i = 1; i <= 5; i++) {
     videos[i].size(width, height);
     videos[i].stop();
   }
@@ -26,7 +26,7 @@ function draw() {
 }
 
 function playVideo(index) {
-  for (let i = 1; i <= 9; i++) {
+  for (let i = 1; i <= 5; i++) {
     if (i === index) {
       if (currentVideoIndex === index) {
         // If the same video is pressed again, restart it
@@ -48,7 +48,7 @@ function playVideo(index) {
 // Play a video when a key is pressed 1 2 3 4 5 6 7 8 9 0  q w e r
 function keyPressed() {
   background(0);
-  if (keyCode >= 49 && keyCode <= 58) {
+  if (keyCode >= 49 && keyCode <= 54) {
     const newIndex = keyCode - 48;
     playVideo(newIndex);
   }
